@@ -15,5 +15,8 @@ deliberately bare and links to nothing; client docs are reached by the link they
 
 **Adding another client's docs:** create a public repo, enable Pages on `main`, and do
 NOT add a CNAME file. It appears at `/<repo-name>/` automatically.
+Then turn on Enforce HTTPS for that repo too (Settings → Pages, or
+`gh api -X PUT repos/mhmproductions/<repo>/pages -F https_enforced=true`). Each repo has its
+own switch; without it, http:// on that path is not sent to https.
 
 DNS (mhmproductions.com, Squarespace Domains): `CNAME docs -> mhmproductions.github.io`
